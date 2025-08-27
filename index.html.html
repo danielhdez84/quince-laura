@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiesta de Quince Años - Laura</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #fce4ec, #e0f7fa);
+            color: #880e4f;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .countdown {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .map-link, .rsvp-button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #f8bbd0;
+            color: #880e4f;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .gallery {
+            margin-top: 30px;
+        }
+        .gallery img {
+            width: 200px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Estás invitado a los Quince Años de Laura!</h1>
+    <p>La celebración será el <strong>20 de diciembre de 2025 a las 5:00 PM</strong></p>
+    <p>Dirección: Unidad residencial Vidanta, San Gabriel, Bello</p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <a class="map-link" href="https://www.google.com/maps?q=Unidad+residencial+Vidanta,+San+Gabriel,+Bello" target="_blank">
+        Ver ubicación en Google Maps
+    </a>
+
+    <a class="rsvp-button" href="mailto:danielhernandez.r8a@gmail.com?subject=Confirmación%20de%20Asistencia">Confirmar Asistencia</a>
+
+    <iframe width="0" height="0" src="https://www.youtube.com/embed/rtOvBOTyX00?autoplay=1&loop=1&playlist=rtOvBOTyX00" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+    <div class="gallery">
+        <h2>Galería</h2>
+        <img src="RandomFileName_22827e82-825f-4c16-acaf-3f58cc10d70d.png" alt="Foto de Laura">
+    </div>
+
+    <p>Síguenos en Instagram: <a href="https://instagram.com/danielhernandeznavarro" target="_blank">@danielhernandeznavarro</a></p>
+
+    <script>
+        const eventDate = new Date("2025-12-20T17:00:00").getTime();
+        const countdown = document.getElementById("countdown");
+
+        const x = setInterval(() => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            countdown.innerHTML = `Faltan ${days} días, ${hours}h ${minutes}m ${seconds}s para la fiesta.`;
+
+            if (distance < 0) {
+                clearInterval(x);
+                countdown.innerHTML = "¡Ya comenzó la fiesta!";
+            }
+        }, 1000);
+    </script>
+
+<div class="gallery">
+    <h2>Ilustraciones</h2>
+    <img src="RandomFileName_22827e82-825f-4c16-acaf-3f58cc10d70d.png" alt="Ilustración de quinceañera">
+    <img src="generated_image.png" alt="Ilustración moderna de quinceañera">
+</div>
+
+</body>
+</html>
